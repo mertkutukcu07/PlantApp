@@ -1,0 +1,33 @@
+import {
+  Rubik_300Light as RubikLight,
+  Rubik_300Light_Italic as RubikLightItalic,
+  Rubik_400Regular as RubikRegular,
+  Rubik_400Regular_Italic as RubikRegularItalic,
+  Rubik_500Medium as RubikMedium,
+  Rubik_500Medium_Italic as RubikMediumItalic,
+  Rubik_600SemiBold as RubikSemiBold,
+  Rubik_600SemiBold_Italic as RubikSemiBoldItalic,
+  Rubik_700Bold as RubikBold,
+  Rubik_700Bold_Italic as RubikBoldItalic,
+  Rubik_800ExtraBold as RubikExtraBold,
+  Rubik_800ExtraBold_Italic as RubikExtraBoldItalic,
+  Rubik_900Black as RubikBlack,
+  Rubik_900Black_Italic as RubikBlackItalic,
+} from '@expo-google-fonts/rubik';
+
+export const customFontstoLoad = {
+  RubikLight,
+  RubikLightItalic,
+  RubikRegular,
+  RubikRegularItalic,
+  RubikMedium,
+  RubikMediumItalic,
+  RubikSemiBold,
+  RubikSemiBoldItalic,
+  RubikBold,
+  RubikBoldItalic,
+  RubikExtraBold,
+  RubikExtraBoldItalic,
+  RubikBlack,
+  RubikBlackItalic,
+};
