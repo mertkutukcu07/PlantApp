@@ -35,10 +35,7 @@ module.exports = {
           DEFAULT: '#757575',
           light: '#E0E0E0',
         },
-        tab: {
-          active: '#28AF6E',
-          inactive: '##BDBDBD',
-        },
+
         input: {
           placeholder: '##AFAFAF',
         },
