@@ -1,4 +1,5 @@
 export enum RouteNames {
   ONBOARDINGSTACK = 'OnboardingStack',
-  WELCOME = 'Welcome',
+  GETSTARTED = 'GetStarted',
+  ONBOARDING = 'Onboarding',
 }

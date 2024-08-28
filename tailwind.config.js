@@ -52,6 +52,10 @@ module.exports = {
           light: '#13231bb3',
           muted: '#597165B2',
         },
+        dot: {
+          active: '#13231B',
+          inactive: '#C1C6C4',
+        },
       },
     },
   },
