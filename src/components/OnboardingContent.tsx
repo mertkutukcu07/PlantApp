@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Image, ImageSourcePropType } from 'react-native';
-import { height, width } from '~/utils/WindowSize';
 
 interface OnboardingContentProps {
   image: ImageSourcePropType;

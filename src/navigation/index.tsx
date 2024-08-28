@@ -2,10 +2,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { RouteNames } from './RouteNames';
-import { OnboardingStack } from './stacks';
+import { OnboardingStack, TabStack } from './stacks';
 
 export type AppNavigatorParamList = {
   [RouteNames.ONBOARDINGSTACK]: undefined;
+  [RouteNames.TABSTACK]: undefined;
 };
 
 const Stack = createStackNavigator<AppNavigatorParamList>();
@@ -18,6 +19,7 @@ export default function AppStack() {
       }}
       initialRouteName={RouteNames.ONBOARDINGSTACK}>
       <Stack.Screen name={RouteNames.ONBOARDINGSTACK} component={OnboardingStack} />
+      <Stack.Screen name={RouteNames.TABSTACK} component={TabStack} />
     </Stack.Navigator>
   );
 }

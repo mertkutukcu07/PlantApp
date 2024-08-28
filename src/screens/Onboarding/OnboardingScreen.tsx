@@ -1,4 +1,4 @@
-import { FlatList, Image, StyleSheet, View } from 'react-native';
+import { FlatList, Image, View } from 'react-native';
 import React, { useMemo } from 'react';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { OnboardingStackParamList } from '~/navigation/stacks/OnboardingStack';
@@ -21,8 +21,10 @@ const OnboardingScreen = () => {
     if (currentIndex < OnboardingItems.length - 1) {
       setCurrentIndex(currentIndex + 1);
     } else {
-      // Son sayfadaysak, bir sonraki ekrana geçiş yapın
-      navigation.navigate(RouteNames.NEXT_SCREEN);
+      // @ts-ignore
+      navigation.navigate(RouteNames.TABSTACK, {
+        screen: RouteNames.HOME,
+      });
     }
   };
 
@@ -65,5 +67,3 @@ const OnboardingScreen = () => {
 };
 
 export default OnboardingScreen;
-
-const styles = StyleSheet.create({});
