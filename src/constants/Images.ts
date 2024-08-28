@@ -3,5 +3,6 @@ export enum Images {
   getStartedContent = require('~/assets/images/get-started-content.png'),
   ob1Content = require('~/assets/images/ob1-content.png'),
   ob2Content = require('~/assets/images/ob2-content.png'),
+  ob2BG = require('~/assets/images/ob2-bg.png'),
   brush = require('~/assets/images/brush.png'),
 }
