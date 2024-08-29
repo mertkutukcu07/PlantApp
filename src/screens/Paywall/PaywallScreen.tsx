@@ -14,7 +14,6 @@ import { CloseIcon } from '~/assets/icons';
 import { Body, Button, PaywallActions, PaywallFeatureItem, PaywallPlanItem } from '~/components';
 import { PaywallFeatures, PaywallPlans } from '~/mocks/Paywall';
 import { PaywallPlan } from '~/constants/Paywall';
-import { isIos } from '~/utils/platform';
 
 interface PaywallModalProps {
   visible: boolean;
@@ -40,8 +39,8 @@ const PaywallModal = ({ visible, onDismiss }: PaywallModalProps) => {
       <View className="flex-1 bg-paywall-background">
         <ImageBackground
           style={{
-            paddingTop: isIos ? top : 0,
-            paddingBottom: isIos ? bottom : 0,
+            paddingTop: top,
+            paddingBottom: bottom,
           }}
           className="h-[65%] w-full justify-between"
           source={Images.paywall}
