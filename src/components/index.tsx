@@ -11,3 +11,7 @@ export { default as PaywallActions } from './PaywallActions';
 export { default as PaywallPlanItem } from './PaywallPlanItem';
 export { default as Input } from './Input';
 export { default as GradientText } from './GradientText';
+export { default as HomeHeader } from './HomeHeader';
+export { default as PremiumBox } from './PremiumBox';
+export { default as QuestionsCard } from './QuestionsCard';
+export { default as CategoryCard } from './CategoryCard';

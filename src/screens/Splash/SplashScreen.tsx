@@ -40,6 +40,7 @@ const SplashScreen = () => {
     setProgress(newProgress);
 
     if (categoriesStatus === 'succeeded' && questionsStatus === 'succeeded') {
+      setProgress(1);
       setTimeout(() => {
         navigation.navigate(RouteNames.ONBOARDINGSTACK);
       }, 2000);
