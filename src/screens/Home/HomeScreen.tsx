@@ -23,24 +23,23 @@ const HomeScreen = () => {
   return (
     <View className="flex-1 bg-background">
       <StatusBar style="dark" />
+      <ImageBackground
+        className="h-[210px] w-full"
+        style={{
+          paddingTop: top,
+        }}
+        source={Images.homeHeaderBG}
+        resizeMode="cover">
+        <Body>
+          <HomeHeader
+            title="Hi, plant lover!"
+            subtitle="Good Afternoon! ⛅"
+            search={search}
+            setSearch={setSearch}
+          />
+        </Body>
+      </ImageBackground>
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ flexGrow: 1 }}>
-        <ImageBackground
-          className="h-[210px] w-full"
-          style={{
-            paddingTop: top,
-          }}
-          source={Images.homeHeaderBG}
-          resizeMode="cover">
-          <Body>
-            <HomeHeader
-              title="Hi, plant lover!"
-              subtitle="Good Afternoon! ⛅"
-              search={search}
-              setSearch={setSearch}
-            />
-          </Body>
-        </ImageBackground>
-
         <Body>
           <PremiumBox
             onPress={() => dispatch(openPaywallModal())}
