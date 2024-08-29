@@ -30,7 +30,12 @@ const PaywallModal = ({ visible, onDismiss }: PaywallModalProps) => {
   };
 
   return (
-    <Modal animationType="slide" transparent={true} visible={visible} onRequestClose={onDismiss}>
+    <Modal
+      statusBarTranslucent
+      animationType="slide"
+      transparent={true}
+      visible={visible}
+      onRequestClose={onDismiss}>
       <StatusBar barStyle="light-content" />
       <View className="flex-1 bg-paywall-background">
         <ImageBackground
