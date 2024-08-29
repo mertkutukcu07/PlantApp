@@ -59,6 +59,7 @@ const OnboardingScreen = () => {
             })}
             scrollEnabled={false}
             showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
             pagingEnabled
             initialScrollIndex={currentIndex}
             maxToRenderPerBatch={1}
