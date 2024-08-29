@@ -11,7 +11,7 @@ npm-debug.*
 web-build/
 
 
-
+.env
 
 ios
 android
@@ -20,4 +20,3 @@ android
 
 .metro-health-check*
 
-.eslintrc.js

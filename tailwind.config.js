@@ -53,6 +53,10 @@ module.exports = {
           active: '#13231B',
           inactive: '#C1C6C4',
         },
+        paywall: {
+          background: '#132018',
+          monthlyBorder: 'rgba(255, 255, 255, 0.3)',
+        },
       },
     },
   },

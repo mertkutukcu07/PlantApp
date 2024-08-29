@@ -3,3 +3,8 @@ export { default as DiagnoseIcon } from './Diagnose';
 export { default as TreeScannerIcon } from './TreeScanner';
 export { default as MyGardenIcon } from './MyGarden';
 export { default as ProfileIcon } from './Profile';
+export { default as FasterIcon } from './Faster';
+export { default as UnlimitedIcon } from './Unlimited';
+export { default as CloseIcon } from './Close';
+export { default as ActiveIcon } from './Active';
+export { default as InactiveIcon } from './InActive';

@@ -5,4 +5,5 @@ export enum Images {
   ob2Content = require('~/assets/images/ob2-content.png'),
   ob2BG = require('~/assets/images/ob2-bg.png'),
   brush = require('~/assets/images/brush.png'),
+  paywall = require('~/assets/images/paywall.png'),
 }

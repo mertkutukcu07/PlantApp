@@ -56,7 +56,7 @@ export const OnboardingHeader: React.FC<OnboardingHeaderProps> = ({
   };
 
   return (
-    <View className="mt-3 gap-3">
+    <View className="mt-5 h-auto gap-3">
       <View className="flex-row flex-wrap items-center gap-2">
         {introText && (
           <Text className={`${getFontWeightClass(introTextFontWeight)} text-3xl text-text`}>

@@ -1,6 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
 import { RouteNames } from './RouteNames';
 import { OnboardingStack, TabStack } from './stacks';
 

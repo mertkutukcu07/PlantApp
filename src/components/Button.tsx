@@ -9,7 +9,7 @@ interface ButtonProps extends TouchableOpacityProps {
 
 const Button: React.FC<ButtonProps> = ({
   title,
-  className = 'items-center justify-center rounded-xl bg-primary py-4',
+  className = 'items-center justify-center rounded-2xl bg-primary py-4',
   textClassName = 'font-rubik-medium text-lg text-white',
   ...props
 }) => {

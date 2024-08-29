@@ -4,3 +4,8 @@ export { default as Body } from './Body';
 export { Dots } from './Dots';
 export { default as OnboardingItem } from './OnboardingItem';
 export { default as Overlay } from './Overlay';
+export { OnboardingContent } from './OnboardingContent';
+export { OnboardingHeader } from './OnboardingHeader';
+export { default as PaywallFeatureItem } from './PaywallFeatureItem';
+export { default as PaywallActions } from './PaywallActions';
+export { default as PaywallPlanItem } from './PaywallPlanItem';

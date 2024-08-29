@@ -9,6 +9,7 @@ import {
   TreeScannerScreen,
 } from '~/screens';
 import { View } from 'react-native';
+import { isAndroid, isIos } from '~/utils/platform';
 
 const Tab = createBottomTabNavigator();
 
@@ -40,12 +41,13 @@ const TabNavigator = () => {
           backgroundColor: 'white',
           borderTopWidth: 0.2,
           borderTopColor: '#979798',
-          height: 84,
+          height: isIos ? 84 : 70,
         },
         headerShown: false,
         tabBarLabelStyle: {
           fontFamily: 'rubik-regular',
           fontSize: 10,
+          bottom: isAndroid ? 10 : 0,
         },
       })}>
       <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />

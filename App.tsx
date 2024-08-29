@@ -11,6 +11,8 @@ import { useFonts } from 'expo-font';
 import { customFontstoLoad } from '~/theme/typography';
 import React from 'react';
 import * as SplashScreen from 'expo-splash-screen';
+import { Provider } from 'react-redux';
+import { store } from '~/redux/store';
 
 export default function App() {
   const [loaded, error] = useFonts(customFontstoLoad);
@@ -26,10 +28,12 @@ export default function App() {
   }, [loaded]);
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-        <AppNavigator />
-      </SafeAreaProvider>
-    </GestureHandlerRootView>
+    <Provider store={store}>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+          <AppNavigator />
+        </SafeAreaProvider>
+      </GestureHandlerRootView>
+    </Provider>
   );
 }

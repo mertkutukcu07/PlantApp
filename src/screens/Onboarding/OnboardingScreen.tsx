@@ -7,6 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Body, Button, Dots, Layout, OnboardingItem, Overlay } from '~/components';
 import { Images } from '~/constants/Images';
 import { OnboardingItems } from '~/mocks/Onboarding';
+import { StatusBar } from 'expo-status-bar';
 type GetStartedScreenNavigationProps = StackNavigationProp<
   OnboardingStackParamList,
   RouteNames.ONBOARDING
@@ -15,7 +16,6 @@ type GetStartedScreenNavigationProps = StackNavigationProp<
 const OnboardingScreen = () => {
   const navigation = useNavigation<GetStartedScreenNavigationProps>();
   const [currentIndex, setCurrentIndex] = React.useState(0);
-  const memoizedData = useMemo(() => OnboardingItems, [OnboardingItems]);
 
   const handleGetStarted = () => {
     if (currentIndex < OnboardingItems.length - 1) {
@@ -30,6 +30,7 @@ const OnboardingScreen = () => {
 
   return (
     <Layout>
+      <StatusBar style="dark" />
       <View className="align-center flex-1 justify-between">
         {currentIndex === 1 && (
           <Image
@@ -39,7 +40,7 @@ const OnboardingScreen = () => {
         )}
         <Body>
           <FlatList
-            data={memoizedData}
+            data={OnboardingItems}
             renderItem={({ item, index }) => (
               <OnboardingItem item={item} index={index} currentIndex={currentIndex} />
             )}
