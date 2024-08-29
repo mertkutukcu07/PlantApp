@@ -11,13 +11,13 @@ const CategoryCard = ({ item, index }: CategoryCardProps) => {
   return (
     <View
       key={index}
-      className="bg-category-background mb-4 aspect-square w-[48%] overflow-hidden rounded-xl"
+      className="mb-4 aspect-square w-[48%] overflow-hidden rounded-xl bg-category-background"
       style={{
         borderWidth: 1,
         borderColor: '#E7EBE9',
       }}>
       <ImageBackground
-        source={{ uri: item.image.url }}
+        source={{ uri: item.image.url, cache: 'force-cache' }}
         className="h-full w-full items-end justify-end overflow-hidden rounded-xl"
         resizeMode="cover">
         <View className="absolute left-0 right-0 top-0 p-3">

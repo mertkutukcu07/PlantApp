@@ -11,7 +11,11 @@ const QuestionsCard = ({ item, index }: QuestionsCardProps) => {
   return (
     <View key={index} className="mt-4">
       <View className="h-[175px] w-[220px] overflow-hidden rounded-xl">
-        <Image source={{ uri: item.image_uri }} className="h-full w-full" resizeMode="cover" />
+        <Image
+          source={{ uri: item.image_uri, cache: 'force-cache' }}
+          className="h-full w-full"
+          resizeMode="cover"
+        />
       </View>
       <View className="absolute bottom-0 left-3 right-3 max-w-[250px] overflow-hidden py-4">
         <Text numberOfLines={2} className="font-rubik-medium text-lg text-white">
