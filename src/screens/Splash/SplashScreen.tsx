@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '~/redux/store';
 import { fetchCategories } from '~/redux/features/categories/categoriesSlice';
 import { fetchQuestions } from '~/redux/features/questions/questionsSlice';
-import { AnyAction, ThunkDispatch } from '@reduxjs/toolkit';
+import { ThunkDispatch } from '@reduxjs/toolkit';
 
 type GetStartedScreenNavigationProps = StackNavigationProp<
   AppNavigatorParamList,
@@ -20,10 +20,10 @@ type GetStartedScreenNavigationProps = StackNavigationProp<
 const SplashScreen = () => {
   const { top, bottom } = useSafeAreaPadding();
   const navigation = useNavigation<GetStartedScreenNavigationProps>();
-  const dispatch = useDispatch<ThunkDispatch<RootState, unknown, AnyAction>>();
+  const dispatch = useDispatch<ThunkDispatch<RootState, unknown, any>>();
+  const { isOnboardingCompleted } = useSelector((state: RootState) => state.onboarding);
   const { status: categoriesStatus } = useSelector((state: RootState) => state.categories);
   const { status: questionsStatus } = useSelector((state: RootState) => state.questions);
-
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -31,19 +31,29 @@ const SplashScreen = () => {
     dispatch(fetchQuestions());
   }, [dispatch]);
 
-  useEffect(() => {
-    let newProgress = 0;
-    if (categoriesStatus === 'loading') newProgress += 0.1;
-    if (questionsStatus === 'loading') newProgress += 0.2;
-    if (categoriesStatus === 'succeeded') newProgress += 0.3;
-    if (questionsStatus === 'succeeded') newProgress += 0.4;
-    setProgress(newProgress);
+  const fakeLoadingTimeout = async (
+    callback: (progress: number) => void,
+    finalizeCallback: () => void
+  ) => {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    callback(0.27);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    callback(0.62);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    callback(1);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    finalizeCallback();
+  };
 
+  useEffect(() => {
     if (categoriesStatus === 'succeeded' && questionsStatus === 'succeeded') {
-      setProgress(1);
-      setTimeout(() => {
-        navigation.navigate(RouteNames.ONBOARDINGSTACK);
-      }, 2000);
+      fakeLoadingTimeout(setProgress, () => {
+        if (isOnboardingCompleted) {
+          navigation.navigate(RouteNames.TABSTACK);
+        } else {
+          navigation.navigate(RouteNames.ONBOARDINGSTACK);
+        }
+      });
     }
   }, [categoriesStatus, questionsStatus, navigation]);
 

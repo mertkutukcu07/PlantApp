@@ -7,7 +7,7 @@ import {
   View,
   StatusBar,
 } from 'react-native';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Images } from '~/constants/Images';
 import useSafeAreaPadding from '~/utils/WindowSize';
 import { CloseIcon } from '~/assets/icons';
@@ -63,9 +63,7 @@ const PaywallModal = ({ visible, onDismiss }: PaywallModalProps) => {
                 showsHorizontalScrollIndicator={false}
                 showsVerticalScrollIndicator={false}
                 keyExtractor={(item, index) => `${index}-features`}
-                renderItem={({ item, index }) => (
-                  <PaywallFeatureItem key={`${index}-feature`} item={item} />
-                )}
+                renderItem={({ item, index }) => <PaywallFeatureItem index={index} item={item} />}
               />
             </View>
           </Body>

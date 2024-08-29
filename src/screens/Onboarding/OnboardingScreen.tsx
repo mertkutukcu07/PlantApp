@@ -10,6 +10,7 @@ import { OnboardingItems } from '~/mocks/Onboarding';
 import { StatusBar } from 'expo-status-bar';
 import { useDispatch } from 'react-redux';
 import { openPaywallModal } from '~/redux/features/paywallModal/paywallModalSlice';
+import { setOnboardingCompleted } from '~/redux/features/onboarding/onboardingSlice';
 type GetStartedScreenNavigationProps = StackNavigationProp<
   OnboardingStackParamList,
   RouteNames.ONBOARDING
@@ -30,6 +31,7 @@ const OnboardingScreen = () => {
       });
 
       dispatch(openPaywallModal());
+      dispatch(setOnboardingCompleted(true));
     }
   };
 
