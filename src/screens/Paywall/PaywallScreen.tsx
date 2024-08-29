@@ -38,7 +38,7 @@ const PaywallModal = ({ visible, onDismiss }: PaywallModalProps) => {
             paddingTop: isIos ? top : 0,
             paddingBottom: isIos ? bottom : 0,
           }}
-          className="h-[65%] w-full justify-between" // justify-between ekleyin
+          className="h-[65%] w-full justify-between"
           source={Images.paywall}
           resizeMode="cover">
           <Body>

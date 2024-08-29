@@ -18,8 +18,8 @@ const HomeScreen = () => {
   const isOpen = useSelector((state: RootState) => state.paywallModal.isOpen);
   const categories = useSelector((state: RootState) => state.categories.categories);
   const questions = useSelector((state: RootState) => state.questions.questions);
-
   const [search, setSearch] = React.useState('');
+
   return (
     <View className="flex-1 bg-background">
       <StatusBar style="dark" />
@@ -61,6 +61,8 @@ const HomeScreen = () => {
             data={categories}
             numColumns={2}
             scrollEnabled={false}
+            windowSize={2}
+            keyExtractor={(item, index) => `${index}-categories`}
             ListHeaderComponent={
               <Text className="font-rubik-medium text-xl text-text">Category</Text>
             }
