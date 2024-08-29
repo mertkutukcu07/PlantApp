@@ -18,9 +18,10 @@ const QuestionsCard = ({ item, index }: QuestionsCardProps) => {
         />
       </View>
       <View className="absolute bottom-0 left-3 right-3 max-w-[250px] overflow-hidden py-4">
-        <Text numberOfLines={2} className="font-rubik-medium text-lg text-white">
+        <Text numberOfLines={1} className="font-rubik-medium text-lg text-white">
           {item.title}
         </Text>
+        <Text className="font-rubik-light text-sm text-white">{item.subtitle}</Text>
       </View>
     </View>
   );
