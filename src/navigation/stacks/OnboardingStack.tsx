@@ -2,6 +2,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { RouteNames } from '../RouteNames';
 import { GetStartedScreen, OnboardingScreen } from '~/screens';
+import React from 'react';
 
 export type OnboardingStackParamList = {
   [RouteNames.GETSTARTED]: undefined;

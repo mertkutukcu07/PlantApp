@@ -37,7 +37,8 @@ module.exports = {
         },
 
         input: {
-          placeholder: '##AFAFAF',
+          placeholder: '#AFAFAF',
+          border: '#3c3c4340',
         },
         accent: {
           purple: '#9C27B0',
@@ -55,7 +56,10 @@ module.exports = {
         },
         paywall: {
           background: '#132018',
-          monthlyBorder: 'rgba(255, 255, 255, 0.3)',
+          monthlyBorder: '#ffffff4d',
+        },
+        premiumBox: {
+          background: '#24201A',
         },
       },
     },

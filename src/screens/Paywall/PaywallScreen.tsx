@@ -73,7 +73,6 @@ const PaywallModal = ({ visible, onDismiss }: PaywallModalProps) => {
           <View className="bottom-6">
             <Button title="Try free for 3 days" />
           </View>
-
           <Text
             style={{
               fontSize: 9,
