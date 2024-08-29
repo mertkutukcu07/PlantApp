@@ -1,12 +1,20 @@
-import { FlatList, ImageBackground, Modal, Text, TouchableOpacity, View } from 'react-native';
-import React from 'react';
+import {
+  FlatList,
+  ImageBackground,
+  Modal,
+  Text,
+  TouchableOpacity,
+  View,
+  StatusBar,
+} from 'react-native';
+import React, { useEffect } from 'react';
 import { Images } from '~/constants/Images';
 import useSafeAreaPadding from '~/utils/WindowSize';
-import { StatusBar } from 'expo-status-bar';
 import { CloseIcon } from '~/assets/icons';
 import { Body, Button, PaywallActions, PaywallFeatureItem, PaywallPlanItem } from '~/components';
 import { PaywallFeatures, PaywallPlans } from '~/mocks/Paywall';
 import { PaywallPlan } from '~/constants/Paywall';
+import { isIos } from '~/utils/platform';
 
 interface PaywallModalProps {
   visible: boolean;
@@ -14,7 +22,7 @@ interface PaywallModalProps {
 }
 
 const PaywallModal = ({ visible, onDismiss }: PaywallModalProps) => {
-  const { top } = useSafeAreaPadding();
+  const { top, bottom } = useSafeAreaPadding();
   const [selectedPlan, setSelectedPlan] = React.useState(PaywallPlan.yearly);
 
   const handleSelectPlan = (plan: PaywallPlan) => {
@@ -23,21 +31,24 @@ const PaywallModal = ({ visible, onDismiss }: PaywallModalProps) => {
 
   return (
     <Modal animationType="slide" transparent={true} visible={visible} onRequestClose={onDismiss}>
-      <StatusBar style="light" />
-      <View className="flex-1 bg-paywall-background ">
+      <StatusBar barStyle="light-content" />
+      <View className="flex-1 bg-paywall-background">
         <ImageBackground
           style={{
-            paddingTop: top,
+            paddingTop: isIos ? top : 0,
+            paddingBottom: isIos ? bottom : 0,
           }}
-          className="h-[65%] w-full"
+          className="h-[65%] w-full justify-between" // justify-between ekleyin
           source={Images.paywall}
           resizeMode="cover">
           <Body>
-            <TouchableOpacity className="items-end justify-end" onPress={onDismiss}>
+            <TouchableOpacity className="mt-4 items-end justify-end" onPress={onDismiss}>
               <CloseIcon />
             </TouchableOpacity>
-            <View className="mt-60">
-              <View className="flex-row items-center ">
+          </Body>
+          <Body>
+            <View>
+              <View className="flex-row items-center">
                 <Text className="font-rubik-bold text-4xl text-white">PlantApp</Text>
                 <Text className="ml-2 font-rubik-light text-3xl text-white">Premium</Text>
               </View>
@@ -78,7 +89,7 @@ const PaywallModal = ({ visible, onDismiss }: PaywallModalProps) => {
               fontSize: 9,
             }}
             className="text-center font-rubik-regular text-text-muted">
-            After the 3-day free trial period you’ll be charged ₺274.99 per year unless you cancel
+            After the 3-day free trial period you'll be charged ₺274.99 per year unless you cancel
             before the trial expires. Yearly Subscription is Auto-Renewable
           </Text>
           <PaywallActions

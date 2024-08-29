@@ -61,6 +61,10 @@ module.exports = {
         premiumBox: {
           background: '#24201A',
         },
+        category: {
+          border: '#ffffff4d',
+          background: '#FDFFFD',
+        },
       },
     },
   },
