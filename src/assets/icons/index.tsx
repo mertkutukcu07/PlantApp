@@ -8,3 +8,6 @@ export { default as UnlimitedIcon } from './Unlimited';
 export { default as CloseIcon } from './Close';
 export { default as ActiveIcon } from './Active';
 export { default as InactiveIcon } from './InActive';
+export { default as SearchIcon } from './Search';
+export { default as PremiumLetterIcon } from './PremiumLetter';
+export { default as PremiumArrow } from './PremiumArrow';

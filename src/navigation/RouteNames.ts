@@ -8,4 +8,5 @@ export enum RouteNames {
   MYGARDEN = 'MyGarden',
   PROFILE = 'Profile',
   TREE_SCANNER = 'TreeScanner',
+  SPLASH = 'Splash',
 }

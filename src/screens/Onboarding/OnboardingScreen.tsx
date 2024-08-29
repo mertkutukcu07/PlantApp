@@ -8,6 +8,8 @@ import { Body, Button, Dots, Layout, OnboardingItem, Overlay } from '~/component
 import { Images } from '~/constants/Images';
 import { OnboardingItems } from '~/mocks/Onboarding';
 import { StatusBar } from 'expo-status-bar';
+import { useDispatch } from 'react-redux';
+import { openPaywallModal } from '~/redux/features/paywallModal/paywallModalSlice';
 type GetStartedScreenNavigationProps = StackNavigationProp<
   OnboardingStackParamList,
   RouteNames.ONBOARDING
@@ -16,6 +18,7 @@ type GetStartedScreenNavigationProps = StackNavigationProp<
 const OnboardingScreen = () => {
   const navigation = useNavigation<GetStartedScreenNavigationProps>();
   const [currentIndex, setCurrentIndex] = React.useState(0);
+  const dispatch = useDispatch();
 
   const handleGetStarted = () => {
     if (currentIndex < OnboardingItems.length - 1) {
@@ -25,6 +28,8 @@ const OnboardingScreen = () => {
       navigation.navigate(RouteNames.TABSTACK, {
         screen: RouteNames.HOME,
       });
+
+      dispatch(openPaywallModal());
     }
   };
 

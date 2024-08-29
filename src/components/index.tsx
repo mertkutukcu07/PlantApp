@@ -9,3 +9,5 @@ export { OnboardingHeader } from './OnboardingHeader';
 export { default as PaywallFeatureItem } from './PaywallFeatureItem';
 export { default as PaywallActions } from './PaywallActions';
 export { default as PaywallPlanItem } from './PaywallPlanItem';
+export { default as Input } from './Input';
+export { default as GradientText } from './GradientText';

@@ -6,3 +6,4 @@ export { default as MyGardenScreen } from './MyGarden/MyGardenScreen';
 export { default as ProfileScreen } from './Profile/ProfileScreen';
 export { default as TreeScannerScreen } from './TreeScanner/TreeScannerScreen';
 export { default as PaywallScreen } from './Paywall/PaywallScreen';
+export { default as SplashScreen } from './Splash/SplashScreen';
