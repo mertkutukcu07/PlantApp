@@ -12,7 +12,8 @@ import { customFontstoLoad } from '~/theme/typography';
 import React from 'react';
 import * as SplashScreen from 'expo-splash-screen';
 import { Provider } from 'react-redux';
-import { store } from '~/redux/store';
+import { persistor, store } from '~/redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 export default function App() {
   const [loaded, error] = useFonts(customFontstoLoad);
@@ -29,11 +30,13 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-          <AppNavigator />
-        </SafeAreaProvider>
-      </GestureHandlerRootView>
+      <PersistGate loading={null} persistor={persistor}>
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+            <AppNavigator />
+          </SafeAreaProvider>
+        </GestureHandlerRootView>
+      </PersistGate>
     </Provider>
   );
 }

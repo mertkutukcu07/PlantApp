@@ -1,14 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import React from 'react';
 import { FasterIcon, UnlimitedIcon } from '~/assets/icons';
 import { PaywallFeaturesType } from '~/mocks/Paywall';
 
 interface PaywallFeatureItemProps {
-  key: string;
+  index: number;
   item: PaywallFeaturesType;
 }
 
-const PaywallFeatureItem = ({ item, key }: PaywallFeatureItemProps) => {
+const PaywallFeatureItem = ({ item, index }: PaywallFeatureItemProps) => {
   const dynamicIcon = () => {
     switch (item.title) {
       case 'Unlimited':
@@ -25,7 +25,7 @@ const PaywallFeatureItem = ({ item, key }: PaywallFeatureItemProps) => {
       style={{
         backgroundColor: 'rgba(255, 255, 255, 0.08)',
       }}
-      key={key}
+      key={index}
       className="relative  rounded-2xl px-4 py-4">
       <View className="relative h-32 w-32 ">
         {dynamicIcon()}
@@ -39,5 +39,3 @@ const PaywallFeatureItem = ({ item, key }: PaywallFeatureItemProps) => {
 };
 
 export default PaywallFeatureItem;
-
-const styles = StyleSheet.create({});
