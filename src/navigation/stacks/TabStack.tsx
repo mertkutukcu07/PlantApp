@@ -1,6 +1,5 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { DiagnoseIcon, HomeIcon, MyGardenIcon, ProfileIcon, TreeScannerIcon } from '~/assets/icons';
 import {
   DiagnoseScreen,
   HomeScreen,
@@ -10,6 +9,7 @@ import {
 } from '~/screens';
 import { View } from 'react-native';
 import { isAndroid, isIos } from '~/utils/platform';
+import { Icons } from '~/constants/Icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,19 +20,19 @@ const TabNavigator = () => {
         tabBarIcon: ({ color }) => {
           switch (route.name) {
             case 'Home':
-              return <HomeIcon width={25} height={25} color={color} />;
+              return <Icons.HomeIcon width={25} height={25} fill={color} />;
             case 'Diagnose':
-              return <DiagnoseIcon width={25} height={25} color={color} />;
+              return <Icons.DiagnoseIcon width={25} height={25} fill={color} />;
             case 'TreeScanner':
               return (
                 <View style={{ marginBottom: 20 }}>
-                  <TreeScannerIcon width={75} height={75} />
+                  <Icons.TreeScannerIcon width={75} height={75} />
                 </View>
               );
             case 'MyGarden':
-              return <MyGardenIcon width={25} height={25} color={color} />;
+              return <Icons.MyGardenIcon width={25} height={25} fill={color} />;
             case 'Profile':
-              return <ProfileIcon width={25} height={25} color={color} />;
+              return <Icons.ProfileIcon width={25} height={25} fill={color} />;
           }
         },
         tabBarActiveTintColor: '#28AF6E',

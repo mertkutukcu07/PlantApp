@@ -10,10 +10,10 @@ import {
 import React from 'react';
 import { Images } from '~/constants/Images';
 import useSafeAreaPadding from '~/utils/WindowSize';
-import { CloseIcon } from '~/assets/icons';
 import { Body, Button, PaywallActions, PaywallFeatureItem, PaywallPlanItem } from '~/components';
 import { PaywallFeatures, PaywallPlans } from '~/mocks/Paywall';
 import { PaywallPlan } from '~/constants/Paywall';
+import { Icons } from '~/constants/Icons';
 
 interface PaywallModalProps {
   visible: boolean;
@@ -47,7 +47,7 @@ const PaywallModal = ({ visible, onDismiss }: PaywallModalProps) => {
           resizeMode="cover">
           <Body>
             <TouchableOpacity className="mt-4 items-end justify-end" onPress={onDismiss}>
-              <CloseIcon />
+              <Icons.CloseIcon />
             </TouchableOpacity>
           </Body>
           <Body>

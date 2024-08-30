@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native';
 import React from 'react';
 import Input from './Input';
-import { SearchIcon } from '~/assets/icons';
+import { Icons } from '~/constants/Icons';
 
 interface HomeHeaderProps {
   title: string;
@@ -19,7 +19,7 @@ const HomeHeader = ({ title, subtitle, search, setSearch }: HomeHeaderProps) => 
         value={search}
         onChangeText={setSearch}
         placeholder="Search for plants"
-        leftIcon={<SearchIcon />}
+        leftIcon={<Icons.SearchIcon />}
       />
     </View>
   );

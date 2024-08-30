@@ -2,8 +2,7 @@ import { Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import { PaywallPlanType } from '~/mocks/Paywall';
 import { PaywallPlan } from '~/constants/Paywall';
-import { ActiveIcon } from '~/assets/icons';
-import InActiveIcon from '~/assets/icons/InActive';
+import { Icons } from '~/constants/Icons';
 
 interface PaywallPlanItemProps {
   item: PaywallPlanType;
@@ -21,7 +20,7 @@ const PaywallPlanItem = ({ item, selectedPlan, handleSelectPlan }: PaywallPlanIt
       }}>
       <View
         className={`flex-row items-center justify-between rounded-2xl border-2 px-4 py-3 ${item.id === PaywallPlan.yearly ? 'border-primary' : 'border-paywall-monthlyBorder'}`}>
-        {item.id === selectedPlan ? <ActiveIcon /> : <InActiveIcon />}
+        {item.id === selectedPlan ? <Icons.ActiveIcon /> : <Icons.InActiveIcon />}
         {item.discount && (
           <View className="absolute right-0 top-0 rounded-bl-2xl rounded-tr-2xl bg-primary px-2 py-1">
             <Text className="font-rubik-bold text-sm text-white opacity-75">Save %50</Text>
