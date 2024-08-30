@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native';
 import React from 'react';
-import { FasterIcon, UnlimitedIcon } from '~/assets/icons';
 import { PaywallFeaturesType } from '~/mocks/Paywall';
+import { Icons } from '~/constants/Icons';
 
 interface PaywallFeatureItemProps {
   index: number;
@@ -12,11 +12,11 @@ const PaywallFeatureItem = ({ item, index }: PaywallFeatureItemProps) => {
   const dynamicIcon = () => {
     switch (item.title) {
       case 'Unlimited':
-        return <UnlimitedIcon />;
+        return <Icons.UnlimitedIcon />;
       case 'Faster':
-        return <FasterIcon />;
+        return <Icons.FasterIcon />;
       default:
-        return <UnlimitedIcon />;
+        return <Icons.UnlimitedIcon />;
     }
   };
 
