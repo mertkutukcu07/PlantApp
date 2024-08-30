@@ -67,7 +67,7 @@ const HomeScreen = () => {
               <Text className="font-rubik-medium text-xl text-text">Category</Text>
             }
             contentContainerClassName="gap-4 mt-6 pb-6"
-            columnWrapperStyle={{ justifyContent: 'space-between' }}
+            columnWrapperClassName="justify-between"
             renderItem={({ item, index }) => <CategoryCard item={item} index={index} />}
           />
         </Body>

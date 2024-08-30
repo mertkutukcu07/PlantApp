@@ -17,11 +17,11 @@ const CategoryCard = ({ item, index }: CategoryCardProps) => {
         borderColor: '#E7EBE9',
       }}>
       <ImageBackground
-        source={{ uri: item.image.url, cache: 'force-cache' }}
+        source={{ uri: item?.image.url, cache: 'force-cache' }}
         className="h-full w-full items-end justify-end overflow-hidden rounded-xl"
         resizeMode="cover">
         <View className="absolute left-0 right-0 top-0 p-3">
-          <Text className="text-text-text w-[75%] font-rubik-medium text-lg">{item.title}</Text>
+          <Text className="text-text-text w-[75%] font-rubik-medium text-lg">{item?.title}</Text>
         </View>
       </ImageBackground>
     </View>

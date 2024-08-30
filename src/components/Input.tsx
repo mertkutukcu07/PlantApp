@@ -12,7 +12,7 @@ const Input = ({ leftIcon, ...props }: InputProps) => {
         borderWidth: 0.5,
         borderColor: '#3c3c4340',
       }}
-      className="flex-row rounded-xl bg-white px-4 py-4">
+      className="flex-row items-center rounded-xl bg-white px-4 py-4 ">
       {leftIcon && <>{leftIcon}</>}
 
       <TextInput

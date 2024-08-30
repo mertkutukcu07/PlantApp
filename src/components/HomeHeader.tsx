@@ -13,8 +13,8 @@ interface HomeHeaderProps {
 const HomeHeader = ({ title, subtitle, search, setSearch }: HomeHeaderProps) => {
   return (
     <View className="mt-2 gap-3">
-      <Text className="font-rubik-regular text-2xl text-text">Hi, plant lover!</Text>
-      <Text className="font-rubik-medium text-3xl text-text">Good Afternoon! ⛅</Text>
+      <Text className="font-rubik-regular text-2xl text-text">{title}</Text>
+      <Text className="font-rubik-medium text-3xl text-text">{subtitle}</Text>
       <Input
         value={search}
         onChangeText={setSearch}
