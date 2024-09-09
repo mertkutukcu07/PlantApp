@@ -3527,7 +3527,6 @@ __metadata:
     "@expo/vector-icons": "npm:^14.0.0"
     "@react-native-async-storage/async-storage": "npm:1.23.1"
     "@react-native-masked-view/masked-view": "npm:0.3.1"
-    "@react-native/assets-registry": "npm:^0.75.2"
     "@react-navigation/bottom-tabs": "npm:^6.6.1"
     "@react-navigation/native": "npm:^6.1.7"
     "@react-navigation/stack": "npm:^6.3.17"
